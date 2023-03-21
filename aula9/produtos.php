@@ -1,8 +1,22 @@
-<h2>Estudo de produtos</h2>
 <?php
-    $produto1 = ["nome" => "Camera", "marca" => "LGs", "preco" => 2500];
-    $produto2 = ["nome" => "Notebook", "marca" => "Dell", "preco" => 5000];
-    $produto3 = ["nome" => "Celular", "marca" => "samsung", "preco" => 7500];
+    $produto1 = [
+        "nome" => "Camera",
+        "marca" => "LGs",
+        "preco" => 2500
+    ];
+    
+    $produto2 = [
+        "nome" => "Notebook",
+        "marca" => "Dell",
+        "preco" => 5000
+    ];
+    
+    $produto3 = [
+        "nome" => "Celular",
+        "marca" => "samsung",
+        "preco" => 7500
+    ];
+    
     $armazem = [
         $produto1,
         $produto2,
