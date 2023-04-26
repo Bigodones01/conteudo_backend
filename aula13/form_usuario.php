@@ -9,13 +9,14 @@
 <body>
     <h1>Cadastro de usuário</h1>
     <hr>
-    <form action="" method="post">
+    <form action="usuario/inserir.php" method="post">
         <label>Nome</label><br>
         <input type="text" name="nome"><br>
         <label>Login</label><br>
         <input type="text" name="login"><br>
-        <label>senha</label><br>
+        <label>Senha</label><br>
         <input type="password" name="senha"><br>
+        <button type="submit">Cadastrar</button>
     </form>
 </body>
 </html>
