@@ -1,7 +1,7 @@
 <?php
    
    //importa o arquivo de conexão
-   require_once "../conexao.php";
+   require_once "../banco/conexao.php";
 
    $id = $_POST['idusuario'];
    $nome = $_POST['nome'];
@@ -21,4 +21,4 @@
    $comando->execute();
 
    //volta para o formulário
-   header("Location: ../usuarios.php");
+   header("Location: index.php");

@@ -1,7 +1,7 @@
 <?php
 	
 	//importa o arquivo de conexão
-	require_once "../conexao.php";
+	require_once "../banco/conexao.php";
 	
     if(isset($_POST['nome']) && isset($_POST['login']) && isset($_POST['senha'])) {
 
@@ -24,4 +24,4 @@
 	$comando->execute();
     }
 	//volta para o formulário
-	header("Location: ../usuarios.php");
+	header("Location: index.php");
