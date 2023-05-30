@@ -19,14 +19,14 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach($noticias as $noticia): ?>
+    <?php foreach($categorias as $categoria): ?>
         <tr>
-            <td><b><?= $noticia->titulo ?></b></td>
-            <td><?= $noticia->categoria ?></td>
-            <td><img src="../uploads/<?= $noticia->foto ?>" height="75px" width="75px"></td>
+            <td><b><?= $categoria->titulo ?></b></td>
+            <td><?= $categoria->categoria ?></td>
+            <td><img src="../uploads/<?= $categoria->foto ?>" height="75px" width="75px"></td>
             <td class="text-end" width="25%">
-                <a href="excluir.php?id=<?= $noticia->idnoticia ?>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Excluir</a>
-                <a href="formulario.php?id=<?= $noticia->idnoticia ?>" class="btn btn-primary"><i class="fa-solid fa-file-pen"></i> Atualizar</a>
+                <a href="excluir.php?id=<?= $categoria->idnoticia ?>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Excluir</a>
+                <a href="formulario.php?id=<?= $categoria->idnoticia ?>" class="btn btn-primary"><i class="fa-solid fa-file-pen"></i> Atualizar</a>
             </td>
         </tr>
     <?php endforeach; ?>
