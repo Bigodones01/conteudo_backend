@@ -4,9 +4,10 @@
 	require_once "../banco/conexao.php";
 	
     if(isset($_POST['nome']) && isset($_POST['login']) && isset($_POST['senha'])) {
-
-	require_once "../uploads/faz_upload.php";
 	
+
+	require_once "faz_upload.php";
+
 	$nome = $_POST['nome'];
 	$login = $_POST['login'];
 	$senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
@@ -17,7 +18,7 @@
 	//prepara o comando para ser executado no mysql
 	$comando = $conexao->prepare($SQL);
 
-	//faz a vinculação dos parâmetros ?, ?, ?
+	//faz a vinculação dos parâmetros ?, ?, ?, ?
 	$comando->bind_param("ssss", $nome, $login, $senha, $nome_foto);
 
 	//executa o comando

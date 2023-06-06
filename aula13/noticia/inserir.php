@@ -4,9 +4,10 @@
 	require_once "../banco/conexao.php";
 	
     if(isset($_POST['titulo']) && isset($_POST['materia']) && isset($_POST['categoria'])) {
-
-	require_once "../uploads/faz_upload.php";
 	
+
+	require_once "faz_upload.php";
+
 	$titulo = $_POST['titulo'];
 	$materia = $_POST['materia'];
 	$categoria = $_POST['categoria'];
@@ -18,8 +19,8 @@
 	//prepara o comando para ser executado no mysql
 	$comando = $conexao->prepare($SQL);
 
-	//faz a vinculação dos parâmetros ?, ?, ?
-	$comando->bind_param("ssss", $titulo, $materia, $categoria, $foto);
+	//faz a vinculação dos parâmetros ?, ?, ?, ?
+	$comando->bind_param("ssss", $titulo, $materia, $categoria, $nome_foto);
 
 	//executa o comando
 	$comando->execute();

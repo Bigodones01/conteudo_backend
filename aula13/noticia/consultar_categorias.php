@@ -4,7 +4,7 @@
 require_once "../banco/conexao.php";
 
 //cria uma variável com um comando SQL
-$SQL = "SELECT DISTINCT categoria FROM `noticia`;";
+$SQL = "SELECT distinct categoria FROM `noticia`;";
 
 //prepara o comando para ser executado no mysql
 $comando = $conexao->prepare($SQL);
