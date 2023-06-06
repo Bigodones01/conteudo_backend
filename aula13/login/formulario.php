@@ -1,5 +1,6 @@
 <?php 
 
+require_once "validar.php";
 require_once "../template/cabecalho.php"; 
 require_once "../template/menu_restrito.php";?>
 
@@ -7,16 +8,22 @@ require_once "../template/menu_restrito.php";?>
     <h1>Área Restrita</h1>
     <hr>
 
-    <form action="validar.php" method="post" enctype="multipart/form-data">
+    <?php if(isset($erro_login)): ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <?php echo $erro_login; ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php endif; ?>
+
+    <form action="formulario.php" method="post" enctype="multipart/form-data">
         
+        <label class="form-label">Login</label><br>
+        <input class="form-control" type="text" name="login"><br>
 
-        <label class="form_label">Login</label><br>
-        <input class="form_control" type="text" name="login"><br>
+        <label class="form-label">Senha</label><br>
+        <input class="form-control" type="password" name="senha"><br>
 
-        <label class="form_label">Senha</label><br>
-        <input class="form_control" type="password" name="senha"><br>
-
-        <button type="submit"  class="btn btn-warning">Entrar</button>    
+        <button type="submit" class="btn btn-warning">Entrar</button>    
     </form>
     
 </div>
