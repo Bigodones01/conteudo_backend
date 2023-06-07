@@ -4,17 +4,26 @@
 require_once "../banco/conexao.php";
 
 //cria uma variável com um comando SQL
-$SQL = "SELECT * FROM `noticia`;";
+$SQL = "SELECT * FROM `noticia` WHERE categoria LIKE ?;";
 
 //prepara o comando para ser executado no mysql
 $comando = $conexao->prepare($SQL);
+
+//pega o valor assunto enviado via GET pela URL
+$assunto = $_GET['assunto'] ?? "";
+$assunto = "%$assunto%";
+
+//vincula a variável $assunto com o param? no SQL
+$comando->bind_param("s", $assunto);
+
 //executa o comando
 $comando->execute();
+
 //pegar os resultados da consulta - todas as linhas de resultado
 $resultado = $comando->get_result();
+
 //pega a primeira linha de resultado da consulta
 $noticias = [];
-
 while ($noticia = $resultado->fetch_object()) {
     $noticias[] = $noticia;
 }
